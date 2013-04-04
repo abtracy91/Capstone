@@ -1,0 +1,200 @@
+{
+"weight": "109 g",
+"thresholdWeight": "255 g",
+"speed": "0 mph",
+"thresholdSpeed": "255 mph",
+"temperature": "-34 C",
+"thresholdTemperature": "255 C",
+}
+{
+"weight": "110 g",
+"thresholdWeight": "255 g",
+"speed": "0 mph",
+"thresholdSpeed": "255 mph",
+"temperature": "-34 C",
+"thresholdTemperature": "255 C",
+}
+{
+"weight": "110 g",
+"thresholdWeight": "255 g",
+"speed": "0 mph",
+"thresholdSpeed": "255 mph",
+"temperature": "-35 C",
+"thresholdTemperature": "255 C",
+}
+{
+"weight": "108 g",
+"thresholdWeight": "255 g",
+"speed": "0 mph",
+"thresholdSpeed": "255 mph",
+"temperature": "-35 C",
+"thresholdTemperature": "255 C",
+}
+{
+"weight": "107 g",
+"thresholdWeight": "255 g",
+"speed": "0 mph",
+"thresholdSpeed": "255 mph",
+"temperature": "-35 C",
+"thresholdTemperature": "255 C",
+}
+{
+"weight": "107 g",
+"thresholdWeight": "255 g",
+"speed": "0 mph",
+"thresholdSpeed": "255 mph",
+"temperature": "-34 C",
+"thresholdTemperature": "255 C",
+}
+{
+"weight": "111 g",
+"thresholdWeight": "255 g",
+"speed": "0 mph",
+"thresholdSpeed": "255 mph",
+"temperature": "-38 C",
+"thresholdTemperature": "255 C",
+}
+{
+"weight": "121 g",
+"thresholdWeight": "255 g",
+"speed": "0 mph",
+"thresholdSpeed": "255 mph",
+"temperature": "-36 C",
+"thresholdTemperature": "255 C",
+}
+{
+"weight": "112 g",
+"thresholdWeight": "255 g",
+"speed": "0 mph",
+"thresholdSpeed": "255 mph",
+"temperature": "-33 C",
+"thresholdTemperature": "255 C",
+}
+{
+"weight": "117 g",
+"thresholdWeight": "255 g",
+"speed": "0 mph",
+"thresholdSpeed": "255 mph",
+"temperature": "-33 C",
+"thresholdTemperature": "255 C",
+}
+{
+"weight": "107 g",
+"thresholdWeight": "255 g",
+"speed": "0 mph",
+"thresholdSpeed": "255 mph",
+"temperature": "-35 C",
+"thresholdTemperature": "255 C",
+}
+{
+"weight": "108 g",
+"thresholdWeight": "255 g",
+"speed": "0 mph",
+"thresholdSpeed": "255 mph",
+"temperature": "-33 C",
+"thresholdTemperature": "255 C",
+}
+{
+"weight": "107 g",
+"thresholdWeight": "255 g",
+"speed": "0 mph",
+"thresholdSpeed": "255 mph",
+"temperature": "-34 C",
+"thresholdTemperature": "255 C",
+}
+{
+"weight": "107 g",
+"thresholdWeight": "255 g",
+"speed": "0 mph",
+"thresholdSpeed": "255 mph",
+"temperature": "-35 C",
+"thresholdTemperature": "255 C",
+}
+{
+"weight": "107 g",
+"thresholdWeight": "255 g",
+"speed": "0 mph",
+"thresholdSpeed": "255 mph",
+"temperature": "-34 C",
+"thresholdTemperature": "255 C",
+}
+{
+"weight": "110 g",
+"thresholdWeight": "255 g",
+"speed": "0 mph",
+"thresholdSpeed": "255 mph",
+"temperature": "-33 C",
+"thresholdTemperature": "255 C",
+}
+{
+"weight": "108 g",
+"thresholdWeight": "255 g",
+"speed": "0 mph",
+"thresholdSpeed": "255 mph",
+"temperature": "-35 C",
+"thresholdTemperature": "255 C",
+}
+{
+"weight": "110 g",
+"thresholdWeight": "255 g",
+"speed": "0 mph",
+"thresholdSpeed": "255 mph",
+"temperature": "-34 C",
+"thresholdTemperature": "255 C",
+}
+{
+"weight": "110 g",
+"thresholdWeight": "255 g",
+"speed": "0 mph",
+"thresholdSpeed": "255 mph",
+"temperature": "-34 C",
+"thresholdTemperature": "255 C",
+}
+{
+"weight": "108 g",
+"thresholdWeight": "255 g",
+"speed": "0 mph",
+"thresholdSpeed": "255 mph",
+"temperature": "-34 C",
+"thresholdTemperature": "255 C",
+}
+{
+"weight": "109 g",
+"thresholdWeight": "255 g",
+"speed": "0 mph",
+"thresholdSpeed": "255 mph",
+"temperature": "-34 C",
+"thresholdTemperature": "255 C",
+}
+{
+"weight": "108 g",
+"thresholdWeight": "255 g",
+"speed": "0 mph",
+"thresholdSpeed": "255 mph",
+"temperature": "-34 C",
+"thresholdTemperature": "255 C",
+}
+{
+"weight": "108 g",
+"thresholdWeight": "255 g",
+"speed": "0 mph",
+"thresholdSpeed": "255 mph",
+"temperature": "-34 C",
+"thresholdTemperature": "255 C",
+}
+{
+"weight": "108 g",
+"thresholdWeight": "255 g",
+"speed": "0 mph",
+"thresholdSpeed": "255 mph",
+"temperature": "-34 C",
+"thresholdTemperature": "255 C",
+}
+{
+"weight": "107 g",
+"thresholdWeight": "255 g",
+"speed": "0 mph",
+"thresholdSpeed": "255 mph",
+"temperature": "-35 C",
+"thresholdTemperature": "255 C",
+}
