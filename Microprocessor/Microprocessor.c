@@ -12,6 +12,7 @@
 #define thresholdWeightLoc 0x00
 #define thresholdSpeedLoc 0x10
 #define thresholdTempLoc 0x20
+#define BAUD 9600
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
@@ -23,7 +24,36 @@
 #include <avr/pgmspace.h>
 #include "lcd.h"
 #include <math.h>
+#include <stdio.h>
 
+#include <util/setbaud.h>
+
+void uart_init(void) {
+	UBRR0H = UBRRH_VALUE;
+	UBRR0L = UBRRL_VALUE;
+	
+	#if USE_2X
+		UCSR0A |= _BV(U2X0);
+	#else
+		UCSR0A &= ~(_BV(U2X0));
+	#endif
+	
+	UCSR0C = _BV(UCSZ01) | _BV(UCSZ00); /* 8-bit data */
+	UCSR0B = _BV(RXEN0) | _BV(TXEN0); /* Enable RX and TX */
+}
+
+void uart_putchar(char c, FILE *stream) {
+    if (c == '\n') {
+        uart_putchar('\r', stream);
+    }
+    loop_until_bit_is_set(UCSR0A, UDRE0);
+    UDR0 = c;
+}
+
+char uart_getchar(FILE *stream) {
+	loop_until_bit_is_set(UCSR0A, RXC0); /* Wait until data exists. */
+	return UDR0;
+}
 
 volatile unsigned long timer1_millis;
 long milliseconds_since;
@@ -137,6 +167,51 @@ void displayTemp(char buffer[8], int temp, int thresholdTemp)
 	lcd_puts(buffer);
 	lcd_puts(" C\n");
 
+}
+
+void sendSerial(char buffer[8], int weight, int thresholdWeight, int speed, int thresholdSpeed, int temp, int thresholdTemp)
+{
+	// Send data over serial port
+	
+	printf("{\n");
+	
+	// Send weight
+	printf("\"weight\": \"");
+	itoa( weight, buffer, 10);
+	printf(buffer);
+	printf(" g\",\n");
+	
+	// Send threshold weight
+	printf("\"thresholdWeight\": \"");
+	itoa( thresholdWeight, buffer, 10);
+	printf(buffer);
+	printf(" g\",\n");
+	
+	// Send speed
+	printf("\"speed\": \"");
+	itoa( speed, buffer, 10);
+	printf(buffer);
+	printf(" mph\",\n");
+	
+	// Send threshold speed
+	printf("\"thresholdSpeed\": \"");
+	itoa( thresholdSpeed, buffer, 10);
+	printf(buffer);
+	printf(" mph\",\n");
+	
+	// Send temperature
+	printf("\"temperature\": \"");
+	itoa( temp, buffer, 10);
+	printf(buffer);
+	printf(" C\",\n");
+	
+	// Send threshold temperature
+	printf("\"thresholdTemperature\": \"");
+	itoa( thresholdTemp, buffer, 10);
+	printf(buffer);
+	printf(" C\",\n");
+	
+	printf("}\n");
 }
 
 int getWeight()
@@ -267,6 +342,12 @@ void writeThresholdTemp(int thresholdTemp)
 
 int main(void)
 {
+	FILE uart_output = FDEV_SETUP_STREAM(uart_putchar, NULL, _FDEV_SETUP_WRITE);
+	FILE uart_input = FDEV_SETUP_STREAM(NULL, uart_getchar, _FDEV_SETUP_READ);
+	uart_init();
+	stdout = &uart_output;
+	stdin = &uart_input;
+	
     // for millisecond timer
 	TCCR1B |= (1 << WGM12) | (1 << CS11);
 	OCR1AH = (CTC_MATCH_OVERFLOW >> 8);
@@ -327,6 +408,8 @@ int main(void)
 		_delay_ms(1000);
 		//
 		
+		
+		sendSerial(buffer, weight, thresholdWeight, speed, thresholdSpeed, temp, thresholdTemp);
 		
 		int x = getButtonPress();
 		if(x == 1)
