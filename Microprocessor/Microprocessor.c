@@ -209,7 +209,7 @@ void sendSerial(char buffer[8], int weight, int thresholdWeight, int speed, int 
 	printf("\"thresholdTemperature\": \"");
 	itoa( thresholdTemp, buffer, 10);
 	printf(buffer);
-	printf(" C\",\n");
+	printf(" C\"\n");
 	
 	printf("}\n");
 }
