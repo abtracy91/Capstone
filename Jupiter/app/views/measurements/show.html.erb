@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Weight:</b>
+  <%= @measurement.weight %>
+</p>
+
+<p>
+  <b>Thresholdweight:</b>
+  <%= @measurement.thresholdWeight %>
+</p>
+
+<p>
+  <b>Speed:</b>
+  <%= @measurement.speed %>
+</p>
+
+<p>
+  <b>Thresholdspeed:</b>
+  <%= @measurement.thresholdSpeed %>
+</p>
+
+<p>
+  <b>Temperature:</b>
+  <%= @measurement.temperature %>
+</p>
+
+<p>
+  <b>Thresholdtemperature:</b>
+  <%= @measurement.thresholdTemperature %>
+</p>
+
+
+<%= link_to 'Edit', edit_measurement_path(@measurement) %> |
+<%= link_to 'Back', measurements_path %>

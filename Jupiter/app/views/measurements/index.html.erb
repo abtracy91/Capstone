@@ -1,0 +1,33 @@
+<h1>Listing measurements</h1>
+
+<table>
+  <tr>
+    <th>Weight</th>
+    <th>Thresholdweight</th>
+    <th>Speed</th>
+    <th>Thresholdspeed</th>
+    <th>Temperature</th>
+    <th>Thresholdtemperature</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @measurements.each do |measurement| %>
+  <tr>
+    <td><%= measurement.weight %></td>
+    <td><%= measurement.thresholdWeight %></td>
+    <td><%= measurement.speed %></td>
+    <td><%= measurement.thresholdSpeed %></td>
+    <td><%= measurement.temperature %></td>
+    <td><%= measurement.thresholdTemperature %></td>
+    <td><%= link_to 'Show', measurement %></td>
+    <td><%= link_to 'Edit', edit_measurement_path(measurement) %></td>
+    <td><%= link_to 'Destroy', measurement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Measurement', new_measurement_path %>
