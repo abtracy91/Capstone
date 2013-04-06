@@ -1,1 +1,1 @@
-ruby ./mercury.rb
+ruby ~/Capstone/Mercury/mercury.rb
