@@ -34,4 +34,4 @@ params = { 'measurement[weight]' => mmt["weight"].to_i.to_s,
 }
 
 x = Net::HTTP.post_form(URI.parse(server), params)
-
+s.serialClose
