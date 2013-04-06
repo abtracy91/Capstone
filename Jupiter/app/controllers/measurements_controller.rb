@@ -1,4 +1,6 @@
 class MeasurementsController < ApplicationController
+  protect_from_forgery :except => :create
+
   # GET /measurements
   # GET /measurements.json
   def index
