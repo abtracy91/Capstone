@@ -1,4 +1,6 @@
 Jupiter::Application.routes.draw do
+  get "display/index"
+
   resources :measurements
 
 
