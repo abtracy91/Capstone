@@ -7,6 +7,11 @@ server = "http://10.7.104.96:3000/measurements"
 
 s = WiringPi::Serial.new('/dev/ttyAMA0', 9600)
 
+sleep(10)
+if s.serialDataAvail < 10
+  abort("Not enough serial data.")
+end
+
 sleep(1) until s.serialDataAvail > 200
 
 data = ""
