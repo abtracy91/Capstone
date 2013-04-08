@@ -1,5 +1,8 @@
 Jupiter::Application.routes.draw do
+
   get "display/index"
+  match "/display", :controller => 'display', :action => 'index'
+  root :to => 'display#index'
 
   resources :measurements
 
