@@ -6,7 +6,7 @@
  */ 
 
 #define F_CPU 8000000UL
-#define LCD_IO_MODE 1
+// #define LCD_IO_MODE 1
 #define CTC_MATCH_OVERFLOW ((F_CPU / 1000) / 8)
 #define aref 5
 #define thresholdWeightLoc 0x00
@@ -22,7 +22,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <avr/pgmspace.h>
-#include "lcd.h"
+// #include "lcd.h"
 #include <math.h>
 #include <stdio.h>
 
@@ -120,53 +120,6 @@ int getButtonPress()
 		return 0;
 	
 	
-}
-
-void displayWeight(char buffer[8], int weight, int thresholdWeight)
-{
-	lcd_clrscr();
-	
-	lcd_puts("Weight: ");
-	itoa( weight, buffer, 10);
-	lcd_puts(buffer);
-	lcd_puts(" g\n");
-	
-	lcd_puts("Threshold: ");
-	itoa( thresholdWeight, buffer, 10);
-	lcd_puts(buffer);
-	lcd_puts(" g\n");
-}
-
-void displaySpeed(char buffer[8], int speed, int thresholdSpeed)
-{
-	lcd_clrscr();
-	
-	lcd_puts("Speed: ");
-	itoa( speed, buffer, 10);
-	lcd_puts(buffer);
-	lcd_puts(" mph\n");
-	
-	lcd_puts("Max: ");
-	itoa( thresholdSpeed, buffer, 10);
-	lcd_puts(buffer);
-	lcd_puts(" mph\n");
-
-}
-
-void displayTemp(char buffer[8], int temp, int thresholdTemp)
-{
-	lcd_clrscr();
-	
-	lcd_puts("Temp: ");
-	itoa( temp, buffer, 10);
-	lcd_puts(buffer);
-	lcd_puts(" C\n");
-	
-	lcd_puts("Threshold: ");
-	itoa( thresholdTemp, buffer, 10);
-	lcd_puts(buffer);
-	lcd_puts(" C\n");
-
 }
 
 void sendSerial(char buffer[8], int weight, int thresholdWeight, int speed, int thresholdSpeed, int temp, int thresholdTemp)
@@ -371,7 +324,7 @@ int main(void)
 	//DDRD &=~ (1 << PD2);
 	//PORTD |= (1 << PD2);
 	
-	lcd_init(LCD_DISP_ON);
+	//lcd_init(LCD_DISP_ON);
 	
 	thresholdWeight = eeprom_read_byte((uint8_t*)thresholdWeightLoc);
 	thresholdSpeed = eeprom_read_byte((uint8_t*)thresholdSpeedLoc);
@@ -381,13 +334,11 @@ int main(void)
     {
 		_delay_ms(1000);
 		
-		lcd_clrscr();
-		
 		// Get and display weight
 		weight = getWeight();
 		
 		
-		displayWeight(buffer, weight, thresholdWeight);
+		//displayWeight(buffer, weight, thresholdWeight);
 		
 		_delay_ms(1000);
 		//
@@ -395,7 +346,7 @@ int main(void)
 		// Get and display temperature
 		temp = getTemp();
 		
-		displayTemp(buffer, temp, thresholdTemp);
+		//displayTemp(buffer, temp, thresholdTemp);
 		
 		_delay_ms(1000);
 		//
@@ -403,7 +354,7 @@ int main(void)
 		// Get and display wind speed
 		speed = getWindSpeed();
 		
-		displaySpeed(buffer, speed, thresholdSpeed);
+		//displaySpeed(buffer, speed, thresholdSpeed);
 		
 		_delay_ms(1000);
 		//
@@ -431,13 +382,13 @@ int main(void)
 		if(x == 3)
 		{
 			writeThresholdWeight(thresholdWeight);
-			lcd_clrscr();
+			//lcd_clrscr();
 			_delay_ms(500);
-			displayWeight(buffer, weight, thresholdWeight);
+			//displayWeight(buffer, weight, thresholdWeight);
 			_delay_ms(500);
-			lcd_clrscr();
+			//lcd_clrscr();
 			_delay_ms(500);
-			displayWeight(buffer, weight, thresholdWeight);
+			//displayWeight(buffer, weight, thresholdWeight);
 			
 		}
 		
