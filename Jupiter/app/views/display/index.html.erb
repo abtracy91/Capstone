@@ -13,6 +13,51 @@
 	    <p>Latest Measurement (<%= (Time.zone.now - @latest.created_at).round %> secs ago):</p>
 	    <p style="margin-left: 20px;"><%= @latest.weight %> g</p>
 	  </div>
+	  <div> <!-- tabs -->
+	    <ul id="weightTab" class="nav nav-tabs">
+	      <li class="active">
+		<a href="#weight15" data-toggle="tab">15 min</a>
+	      </li>
+	      <li>
+		<a href="#weight60" data-toggle="tab">60 min</a>
+	      </li>
+	      <li>
+		<a href="#weight360" data-toggle="tab">6 hr</a>
+	      </li>
+	    </ul>
+	    <div id="weightTabContent" class="tab-content">
+	      <div class="tab-pane fade in active" id="weight15">
+		<ul>
+		<% @last15.each do |i| %>
+		  <li>
+		    <%= (Time.zone.now - i.created_at).round %> secs ago:
+		    <%= i.weight %>
+		  </li>
+		<% end %>
+		</ul>
+	      </div>
+	      <div class="tab-pane fade" id="weight60">
+		<ul>
+		<% @last60.each do |i| %>
+		  <li>
+		    <%= (Time.zone.now - i.created_at).round %> secs ago:
+		    <%= i.weight %>
+		  </li>
+		<% end %>
+		</ul>
+	      </div>
+	      <div class="tab-pade fade" id="weight360">
+		<ul>
+		<% @last360.each do |i| %>
+		  <li>
+		    <%= (Time.zone.now - i.created_at).round %> secs ago:
+		    <%= i.weight %>
+		  </li>
+		<% end %>
+		</ul>
+	      </div>
+	    </div> <!-- weightTabContent -->
+	  </div> <!-- tabs -->
 	</div> <!-- span4 -->
 	<div class="span4">
 	  <h2>Speed</h2>
@@ -20,6 +65,51 @@
 	    <p>Latest Measurement (<%= (Time.zone.now - @latest.created_at).round %> secs ago):</p>
 	    <p style="margin-left: 20px;"><%= @latest.speed %> mph</p>
 	  </div>
+	  <div> <!-- tabs -->
+	    <ul id="speedTab" class="nav nav-tabs">
+	      <li class="active">
+		<a href="#speed15" data-toggle="tab">15 min</a>
+	      </li>
+	      <li>
+		<a href="#speed60" data-toggle="tab">60 min</a>
+	      </li>
+	      <li>
+		<a href="#speed360" data-toggle="tab">6 hr</a>
+	      </li>
+	    </ul>
+	    <div id="speedTabContent" class="tab-content">
+	      <div class="tab-pane fade in active" id="speed15">
+		<ul>
+		<% @last15.each do |i| %>
+		  <li>
+		    <%= (Time.zone.now - i.created_at).round %> secs ago:
+		    <%= i.speed %>
+		  </li>
+		<% end %>
+		</ul>
+	      </div>
+	      <div class="tab-pane fade" id="speed60">
+		<ul>
+		<% @last60.each do |i| %>
+		  <li>
+		    <%= (Time.zone.now - i.created_at).round %> secs ago:
+		    <%= i.speed %>
+		  </li>
+		<% end %>
+		</ul>
+	      </div>
+	      <div class="tab-pade fade" id="speed360">
+		<ul>
+		<% @last360.each do |i| %>
+		  <li>
+		    <%= (Time.zone.now - i.created_at).round %> secs ago:
+		    <%= i.speed %>
+		  </li>
+		<% end %>
+		</ul>
+	      </div>
+	    </div> <!-- speedTabContent -->
+	  </div> <!-- tabs -->
 	</div> <!-- span4 -->
 	<div class="span4">
 	  <h2>Temperature</h2>
@@ -27,6 +117,37 @@
 	    <p>Latest Measurement (<%= (Time.zone.now - @latest.created_at).round %> secs ago):</p>
 	    <p style="margin-left: 20px;"><%= @latest.temperature %> &deg;C</p>
 	  </div>
+	  <div> <!-- tabs -->
+	    <ul id="temperatureTab" class="nav nav-tabs">
+	      <li class="active">
+		<a href="#temperature15" data-toggle="tab">15 min</a>
+	      </li>
+	      <li>
+		<a href="#temperature60" data-toggle="tab">60 min</a>
+	      </li>
+	      <li>
+		<a href="#temperature360" data-toggle="tab">6 hr</a>
+	      </li>
+	    </ul>
+	    <div id="temperatureTabContent" class="tab-content">
+	      <div class="tab-pane fade in active" id="temperature15">
+		<li>
+		<% @last15.each do |i| %>
+		  <ul>
+		    <%= (Time.zone.now - i.created_at).round %> secs ago:
+		    <%= i.temperature %>
+		  </ul>
+		<% end %>
+		</li>
+	      </div>
+	      <div class="tab-pane fade" id="temperature60">
+		60 min
+	      </div>
+	      <div class="tab-pade fade" id="temperature360">
+		6 hr
+	      </div>
+	    </div> <!-- temperatureTabContent -->
+	  </div> <!-- tabs -->
 	</div> <!-- span4 -->
       </div> <!-- row -->
     </div> <!-- content -->
