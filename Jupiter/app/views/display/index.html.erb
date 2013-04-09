@@ -5,8 +5,25 @@
         <div class="span12">
 	  <h1>Display#index</h1>
 	  <p>Find me in app/views/display/index.html.erb</p>
-
         </div> <!-- span12 -->
+      </div> <!-- row -->
+      <div class="row">
+	<div class="span4">
+	  <h2>Weight</h2>
+	  <div>
+	    <p>Latest Measurement (<%= @latest.created_at %>):</p>
+	    <p style="margin-left: 20px;"><%= @latest.weight %> g</p>
+	  </div>
+	</div> <!-- span4 -->
+	<div class="span4">
+	  <h2>Speed</h2>
+	  <div>
+	    <p>
+	  </div>
+	</div> <!-- span4 -->
+	<div class="span4">
+	  <h2>Temperature</h2>
+	</div> <!-- span4 -->
       </div> <!-- row -->
     </div> <!-- content -->
   </div> <!-- container -->
