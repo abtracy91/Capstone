@@ -7,10 +7,10 @@ server = "http://localhost:3000/measurements"
 
 s = WiringPi::Serial.new('/dev/ttyAMA0', 9600)
 
-sleep(10)
-if s.serialDataAvail < 10
-  abort("Not enough serial data.")
-end
+#sleep(10)
+#if s.serialDataAvail < 10
+#  abort("Not enough serial data.")
+#end
 
 sleep(1) until s.serialDataAvail > 200
 
