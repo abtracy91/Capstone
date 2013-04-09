@@ -31,7 +31,7 @@
 		<% @last15.each do |i| %>
 		  <li>
 		    <%= (Time.zone.now - i.created_at).round %> secs ago:
-		    <%= i.weight %>
+		    <%= i.weight %> g
 		  </li>
 		<% end %>
 		</ul>
@@ -41,7 +41,7 @@
 		<% @last60.each do |i| %>
 		  <li>
 		    <%= (Time.zone.now - i.created_at).round %> secs ago:
-		    <%= i.weight %>
+		    <%= i.weight %> g
 		  </li>
 		<% end %>
 		</ul>
@@ -51,7 +51,7 @@
 		<% @last360.each do |i| %>
 		  <li>
 		    <%= (Time.zone.now - i.created_at).round %> secs ago:
-		    <%= i.weight %>
+		    <%= i.weight %> g
 		  </li>
 		<% end %>
 		</ul>
@@ -83,7 +83,7 @@
 		<% @last15.each do |i| %>
 		  <li>
 		    <%= (Time.zone.now - i.created_at).round %> secs ago:
-		    <%= i.speed %>
+		    <%= i.speed %> mph
 		  </li>
 		<% end %>
 		</ul>
@@ -93,7 +93,7 @@
 		<% @last60.each do |i| %>
 		  <li>
 		    <%= (Time.zone.now - i.created_at).round %> secs ago:
-		    <%= i.speed %>
+		    <%= i.speed %> mph
 		  </li>
 		<% end %>
 		</ul>
@@ -103,7 +103,7 @@
 		<% @last360.each do |i| %>
 		  <li>
 		    <%= (Time.zone.now - i.created_at).round %> secs ago:
-		    <%= i.speed %>
+		    <%= i.speed %> mph
 		  </li>
 		<% end %>
 		</ul>
@@ -131,20 +131,34 @@
 	    </ul>
 	    <div id="temperatureTabContent" class="tab-content">
 	      <div class="tab-pane fade in active" id="temperature15">
-		<li>
+		<ul>
 		<% @last15.each do |i| %>
-		  <ul>
+		  <li>
 		    <%= (Time.zone.now - i.created_at).round %> secs ago:
-		    <%= i.temperature %>
-		  </ul>
+		    <%= i.temperature %> &deg;C
+		  </li>
 		<% end %>
-		</li>
+		</ul>
 	      </div>
 	      <div class="tab-pane fade" id="temperature60">
-		60 min
+		<ul>
+		<% @last60.each do |i| %>
+		  <li>
+		    <%= (Time.zone.now - i.created_at).round %> secs ago:
+		    <%= i.temperature %> &deg;C
+		  </li>
+		<% end %>
+		</ul>
 	      </div>
 	      <div class="tab-pade fade" id="temperature360">
-		6 hr
+		<ul>
+		<% @last360.each do |i| %>
+		  <li>
+		    <%= (Time.zone.now - i.created_at).round %> secs ago:
+		    <%= i.temperature %> &deg;C
+		  </li>
+		<% end %>
+		</ul>
 	      </div>
 	    </div> <!-- temperatureTabContent -->
 	  </div> <!-- tabs -->
