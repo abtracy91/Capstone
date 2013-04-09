@@ -11,18 +11,23 @@
 	<div class="span4">
 	  <h2>Weight</h2>
 	  <div>
-	    <p>Latest Measurement (<%= @latest.created_at %>):</p>
+	    <p>Latest Measurement (<%= (Time.zone.now - @latest.created_at).round %> secs ago):</p>
 	    <p style="margin-left: 20px;"><%= @latest.weight %> g</p>
 	  </div>
 	</div> <!-- span4 -->
 	<div class="span4">
 	  <h2>Speed</h2>
 	  <div>
-	    <p>
+	    <p>Latest Measurement (<%= (Time.zone.now - @latest.created_at).round %> secs ago):</p>
+	    <p style="margin-left: 20px;"><%= @latest.speed %> mph</p>
 	  </div>
 	</div> <!-- span4 -->
 	<div class="span4">
 	  <h2>Temperature</h2>
+	  <div>
+	    <p>Latest Measurement (<%= (Time.zone.now - @latest.created_at).round %> secs ago):</p>
+	    <p style="margin-left: 20px;"><%= @latest.temperature %> &deg;C</p>
+	  </div>
 	</div> <!-- span4 -->
       </div> <!-- row -->
     </div> <!-- content -->
