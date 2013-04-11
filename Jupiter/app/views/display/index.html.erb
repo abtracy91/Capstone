@@ -52,7 +52,7 @@
 		</script>
 		<ul>
 		<% @last15.each do |i| %>
-		  <li <% if i.weight > @threshold.thresholdWeight %>style="background-color: red;"<% end %>>
+		  <li <% if i.weight > @thresholdW %>style="background-color: red;"<% end %>>
 		    <%= (Time.zone.now - i.created_at).round %> secs ago:
 		    <%= i.weight %> g
 		  </li>
@@ -82,7 +82,7 @@
 		</script>
 		<ul>
 		<% @last60.each do |i| %>
-		  <li <% if i.weight > @threshold.thresholdWeight %>style="background-color: red;"<% end %>>
+		  <li <% if i.weight > @thresholdW %>style="background-color: red;"<% end %>>
 		    <%= (Time.zone.now - i.created_at).round %> secs ago:
 		    <%= i.weight %> g
 		  </li>
@@ -112,7 +112,7 @@
 		</script>
 		<ul>
 		<% @last360.each do |i| %>
-		  <li <% if i.weight > @threshold.thresholdWeight %>style="background-color: red;"<% end %>>
+		  <li <% if i.weight > @thresholdW %>style="background-color: red;"<% end %>>
 		    <%= (Time.zone.now - i.created_at).round %> secs ago:
 		    <%= i.weight %> g
 		  </li>
@@ -164,7 +164,7 @@
 		</script>
 		<ul>
 		<% @last15.each do |i| %>
-		  <li <% if i.speed > @threshold.thresholdSpeed %>style="background-color: red;"<% end %>>
+		  <li <% if i.speed > @thresholdS %>style="background-color: red;"<% end %>>
 		    <%= (Time.zone.now - i.created_at).round %> secs ago:
 		    <%= i.speed %> mph
 		  </li>
@@ -194,7 +194,7 @@
 		</script>
 		<ul>
 		<% @last60.each do |i| %>
-		  <li <% if i.speed > @threshold.thresholdSpeed %>style="background-color: red;"<% end %>>
+		  <li <% if i.speed > @thresholdS %>style="background-color: red;"<% end %>>
 		    <%= (Time.zone.now - i.created_at).round %> secs ago:
 		    <%= i.speed %> mph
 		  </li>
@@ -224,7 +224,7 @@
 		</script>
 		<ul>
 		<% @last360.each do |i| %>
-		  <li <% if i.speed > @threshold.thresholdSpeed %>style="background-color: red;"<% end %>>
+		  <li <% if i.speed > @thresholdS %>style="background-color: red;"<% end %>>
 		    <%= (Time.zone.now - i.created_at).round %> secs ago:
 		    <%= i.speed %> mph
 		  </li>
@@ -276,7 +276,7 @@
 		</script>
 		<ul>
 		<% @last15.each do |i| %>
-		  <li <% if i.temperature > @threshold.thresholdTemperature %>style="background-color: red;"<% end %>>
+		  <li <% if i.temperature > @thresholdT %>style="background-color: red;"<% end %>>
 		    <%= (Time.zone.now - i.created_at).round %> secs ago:
 		    <%= i.temperature %> &deg;C
 		  </li>
@@ -306,7 +306,7 @@
 		</script>
 		<ul>
 		<% @last60.each do |i| %>
-		  <li <% if i.temperature > @threshold.thresholdTemperature %>style="background-color: red;"<% end %>>
+		  <li <% if i.temperature > @thresholdT %>style="background-color: red;"<% end %>>
 		    <%= (Time.zone.now - i.created_at).round %> secs ago:
 		    <%= i.temperature %> &deg;C
 		  </li>
@@ -336,7 +336,7 @@
 		</script>
 		<ul>
 		<% @last360.each do |i| %>
-		  <li <% if i.temperature > @threshold.thresholdTemperature %>style="background-color: red;"<% end %>>
+		  <li <% if i.temperature > @thresholdT %>style="background-color: red;"<% end %>>
 		    <%= (Time.zone.now - i.created_at).round %> secs ago:
 		    <%= i.temperature %> &deg;C
 		  </li>
