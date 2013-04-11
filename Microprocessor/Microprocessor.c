@@ -210,7 +210,12 @@ int getTemp()
 	measuredV = getADC(6);
 	actualV = (int) round( (float)measuredV * ratio);
 	
-	temperature = (int) round( ((float)actualV - (float)1375) / ( (float)22.5 ) );
+	//temperature = (int) round( ((float)actualV - (float)1375) / ( (float)22.5 ) );
+	//temperature = (int) round( 99.62 * ((float)actualV / (float)1000) - .3995);
+	//temperature = (int) round( ((float)99.62 * (float)actualV / (float)1000) - (float).3995    );
+	
+	temperature = (int) (actualV + 35) / 10;
+	
 	
 	return temperature;
 	
