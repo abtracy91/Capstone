@@ -3,7 +3,7 @@
     <div class="content">
       <div class="row">
         <div class="span12">
-	  <h1>Monitoring System Status</h1>
+	  <h1 style="text-align: center;">Monitoring System Status</h1>
         </div> <!-- span12 -->
       </div> <!-- row -->
       <div class="row">
@@ -27,9 +27,29 @@
 	    </ul>
 	    <div id="weightTabContent" class="tab-content">
 	      <div class="tab-pane fade in active" id="weight15">
+		<div id="last15_chart"></div>
+		<script>
+		  $(function () {
+		    new Highcharts.Chart({
+		      chart: { renderTo: 'last15_chart', width: 370},
+		      title: { text: 'Weights from last 15 minutes:' },
+		      xAxis: { type: 'linear', title: { text: 'secs ago' } },
+		      yAxis: { title: { text: 'grams' } },
+		      plotOptions: { line: { showInLegend: false } },
+		      series: [{
+		        data: [
+		          <% @last15.each do |i| %>
+			    [<%= (Time.zone.now - i.created_at).round %>,
+			      <%= i.weight %> ],
+			  <% end %>
+		        ]
+		      }]
+		    });
+		  });
+		</script>
 		<ul>
 		<% @last15.each do |i| %>
-		  <li>
+		  <li <% if i.weight > i.thresholdWeight %>style="background-color: red;"<% end %>>
 		    <%= (Time.zone.now - i.created_at).round %> secs ago:
 		    <%= i.weight %> g
 		  </li>
@@ -37,9 +57,29 @@
 		</ul>
 	      </div>
 	      <div class="tab-pane fade" id="weight60">
+		<div id="last60_chart"></div>
+		<script>
+		  $(function () {
+		    new Highcharts.Chart({
+		      chart: { renderTo: 'last60_chart', width: 370},
+		      title: { text: 'Weights from last 60 minutes:' },
+		      xAxis: { type: 'linear', title: { text: 'secs ago' } },
+		      yAxis: { title: { text: 'grams' } },
+		      plotOptions: { line: { showInLegend: false } },
+		      series: [{
+		        data: [
+		          <% @last60.each do |i| %>
+			    [<%= (Time.zone.now - i.created_at).round %>,
+			      <%= i.weight %> ],
+			  <% end %>
+		        ]
+		      }]
+		    });
+		  });
+		</script>
 		<ul>
 		<% @last60.each do |i| %>
-		  <li>
+		  <li <% if i.weight > i.thresholdWeight %>style="background-color: red;"<% end %>>
 		    <%= (Time.zone.now - i.created_at).round %> secs ago:
 		    <%= i.weight %> g
 		  </li>
@@ -47,9 +87,29 @@
 		</ul>
 	      </div>
 	      <div class="tab-pade fade" id="weight360">
+		<div id="last360_chart"></div>
+		<script>
+		  $(function () {
+		    new Highcharts.Chart({
+		      chart: { renderTo: 'last360_chart', width: 370},
+		      title: { text: 'Weights from last 6 hours:' },
+		      xAxis: { type: 'linear', title: { text: 'secs ago' } },
+		      yAxis: { title: { text: 'grams' } },
+		      plotOptions: { line: { showInLegend: false } },
+		      series: [{
+		        data: [
+		          <% @last360.each do |i| %>
+			    [<%= (Time.zone.now - i.created_at).round %>,
+			      <%= i.weight %> ],
+			  <% end %>
+		        ]
+		      }]
+		    });
+		  });
+		</script>
 		<ul>
 		<% @last360.each do |i| %>
-		  <li>
+		  <li <% if i.weight > i.thresholdWeight %>style="background-color: red;"<% end %>>
 		    <%= (Time.zone.now - i.created_at).round %> secs ago:
 		    <%= i.weight %> g
 		  </li>
@@ -79,9 +139,29 @@
 	    </ul>
 	    <div id="speedTabContent" class="tab-content">
 	      <div class="tab-pane fade in active" id="speed15">
+		<div id="last15speed_chart"></div>
+		<script>
+		  $(function () {
+		    new Highcharts.Chart({
+		      chart: { renderTo: 'last15speed_chart', width: 370},
+		      title: { text: 'Speeds from last 15 minutes:' },
+		      xAxis: { type: 'linear', title: { text: 'secs ago' } },
+		      yAxis: { title: { text: 'mph' } },
+		      plotOptions: { line: { showInLegend: false } },
+		      series: [{
+		        data: [
+		          <% @last15.each do |i| %>
+			    [<%= (Time.zone.now - i.created_at).round %>,
+			      <%= i.weight %> ],
+			  <% end %>
+		        ]
+		      }]
+		    });
+		  });
+		</script>
 		<ul>
 		<% @last15.each do |i| %>
-		  <li>
+		  <li <% if i.speed > i.thresholdSpeed %>style="background-color: red;"<% end %>>
 		    <%= (Time.zone.now - i.created_at).round %> secs ago:
 		    <%= i.speed %> mph
 		  </li>
@@ -89,9 +169,29 @@
 		</ul>
 	      </div>
 	      <div class="tab-pane fade" id="speed60">
+		<div id="last60speed_chart"></div>
+		<script>
+		  $(function () {
+		    new Highcharts.Chart({
+		      chart: { renderTo: 'last60speed_chart', width: 370},
+		      title: { text: 'Speeds from last 60 minutes:' },
+		      xAxis: { type: 'linear', title: { text: 'secs ago' } },
+		      yAxis: { title: { text: 'mph' } },
+		      plotOptions: { line: { showInLegend: false } },
+		      series: [{
+		        data: [
+		          <% @last60.each do |i| %>
+			    [<%= (Time.zone.now - i.created_at).round %>,
+			      <%= i.speed %> ],
+			  <% end %>
+		        ]
+		      }]
+		    });
+		  });
+		</script>
 		<ul>
 		<% @last60.each do |i| %>
-		  <li>
+		  <li <% if i.speed > i.thresholdSpeed %>style="background-color: red;"<% end %>>
 		    <%= (Time.zone.now - i.created_at).round %> secs ago:
 		    <%= i.speed %> mph
 		  </li>
@@ -99,9 +199,29 @@
 		</ul>
 	      </div>
 	      <div class="tab-pade fade" id="speed360">
+		<div id="last360speed_chart"></div>
+		<script>
+		  $(function () {
+		    new Highcharts.Chart({
+		      chart: { renderTo: 'last360speed_chart', width: 370},
+		      title: { text: 'Speeds from last 6 hours:' },
+		      xAxis: { type: 'linear', title: { text: 'secs ago' } },
+		      yAxis: { title: { text: 'mph' } },
+		      plotOptions: { line: { showInLegend: false } },
+		      series: [{
+		        data: [
+		          <% @last360.each do |i| %>
+			    [<%= (Time.zone.now - i.created_at).round %>,
+			      <%= i.speed %> ],
+			  <% end %>
+		        ]
+		      }]
+		    });
+		  });
+		</script>
 		<ul>
 		<% @last360.each do |i| %>
-		  <li>
+		  <li <% if i.speed > i.thresholdSpeed %>style="background-color: red;"<% end %>>
 		    <%= (Time.zone.now - i.created_at).round %> secs ago:
 		    <%= i.speed %> mph
 		  </li>
@@ -131,9 +251,29 @@
 	    </ul>
 	    <div id="temperatureTabContent" class="tab-content">
 	      <div class="tab-pane fade in active" id="temperature15">
+		<div id="last15temp_chart"></div>
+		<script>
+		  $(function () {
+		    new Highcharts.Chart({
+		      chart: { renderTo: 'last15temp_chart', width: 370},
+		      title: { text: 'Temperatures from last 15 minutes:' },
+		      xAxis: { type: 'linear', title: { text: 'secs ago' } },
+		      yAxis: { title: { text: 'C' } },
+		      plotOptions: { line: { showInLegend: false } },
+		      series: [{
+		        data: [
+		          <% @last15.each do |i| %>
+			    [<%= (Time.zone.now - i.created_at).round %>,
+			      <%= i.temperature %> ],
+			  <% end %>
+		        ]
+		      }]
+		    });
+		  });
+		</script>
 		<ul>
 		<% @last15.each do |i| %>
-		  <li>
+		  <li <% if i.temperature > i.thresholdTemperature %>style="background-color: red;"<% end %>>
 		    <%= (Time.zone.now - i.created_at).round %> secs ago:
 		    <%= i.temperature %> &deg;C
 		  </li>
@@ -141,9 +281,29 @@
 		</ul>
 	      </div>
 	      <div class="tab-pane fade" id="temperature60">
+		<div id="last60temp_chart"></div>
+		<script>
+		  $(function () {
+		    new Highcharts.Chart({
+		      chart: { renderTo: 'last60temp_chart', width: 370},
+		      title: { text: 'Temperatures from last 60 minutes:' },
+		      xAxis: { type: 'linear', title: { text: 'secs ago' } },
+		      yAxis: { title: { text: 'C' } },
+		      plotOptions: { line: { showInLegend: false } },
+		      series: [{
+		        data: [
+		          <% @last60.each do |i| %>
+			    [<%= (Time.zone.now - i.created_at).round %>,
+			      <%= i.temperature %> ],
+			  <% end %>
+		        ]
+		      }]
+		    });
+		  });
+		</script>
 		<ul>
 		<% @last60.each do |i| %>
-		  <li>
+		  <li <% if i.temperature > i.thresholdTemperature %>style="background-color: red;"<% end %>>
 		    <%= (Time.zone.now - i.created_at).round %> secs ago:
 		    <%= i.temperature %> &deg;C
 		  </li>
@@ -151,9 +311,29 @@
 		</ul>
 	      </div>
 	      <div class="tab-pade fade" id="temperature360">
+		<div id="last360temp_chart"></div>
+		<script>
+		  $(function () {
+		    new Highcharts.Chart({
+		      chart: { renderTo: 'last360temp_chart', width: 370},
+		      title: { text: 'Temperatures from last 6 hours:' },
+		      xAxis: { type: 'linear', title: { text: 'secs ago' } },
+		      yAxis: { title: { text: 'C' } },
+		      plotOptions: { line: { showInLegend: false } },
+		      series: [{
+		        data: [
+		          <% @last360.each do |i| %>
+			    [<%= (Time.zone.now - i.created_at).round %>,
+			      <%= i.temperature %> ],
+			  <% end %>
+		        ]
+		      }]
+		    });
+		  });
+		</script>
 		<ul>
 		<% @last360.each do |i| %>
-		  <li>
+		  <li <% if i.temperature > i.thresholdTemperature %>style="background-color: red;"<% end %>>
 		    <%= (Time.zone.now - i.created_at).round %> secs ago:
 		    <%= i.temperature %> &deg;C
 		  </li>
