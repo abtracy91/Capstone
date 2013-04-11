@@ -10,8 +10,10 @@
 	<div class="span4">
 	  <h2>Weight</h2>
 	  <div>
+	    <div id="latestWeight">
 	    <p>Latest Measurement (<%= (Time.zone.now - @latest.created_at).round %> secs ago):</p>
 	    <p style="margin-left: 20px;"><%= @latest.weight %> g</p>
+	    </div><!-- latestWeight -->
 	  </div>
 	  <div> <!-- tabs -->
 	    <ul id="weightTab" class="nav nav-tabs">
@@ -28,6 +30,7 @@
 	    <div id="weightTabContent" class="tab-content">
 	      <script>
 		setInterval( function () {
+		  $('div#latestWeight').load('http://capstone.cyclone8.org #latestWeight');
 		  $('div#weight15').load('http://capstone.cyclone8.org #weight15');
 		  setTimeout( function () {
 		    $(function () { makelast15(); });
