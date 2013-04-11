@@ -3,7 +3,7 @@ require 'json'
 require 'uri'
 require 'net/http'
 
-server = "http://localhost:3000/measurements"
+server = "http://jupiter-4970.herokuapp.com/measurements"
 
 s = WiringPi::Serial.new('/dev/ttyAMA0', 9600)
 
