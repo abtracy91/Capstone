@@ -8,5 +8,9 @@ class DisplayController < ApplicationController
 
     @last360 = Measurement.all(:conditions => ["created_at >= ?", DateTime.now - 360.minutes], :order => "created_at DESC")
 
+    @thresholdW = Threshold.find_by_id(1).thresholdWeight
+    @thresholdS = Threshold.find_by_id(1).thresholdSpeed
+    @thresholdT = Threshold.find_by_id(1).thresholdTemperature
+
   end
 end

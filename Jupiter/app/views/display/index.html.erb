@@ -10,7 +10,7 @@
 	<div class="span4">
 	  <h2>Weight</h2>
 	  <div>
-	    <div id="latestWeight" <% if @latest.weight > @threshold.thresholdWeight %>style="background-color: red;"<% end %>>
+	    <div id="latestWeight" <% if @latest.weight > @thresholdW %>style="background-color: red;"<% end %>>
 	    <p>Latest Measurement (<%= (Time.zone.now - @latest.created_at).round %> secs ago):</p>
 	    <p style="margin-left: 20px;"><%= @latest.weight %> g</p>
 	    </div><!-- latestWeight -->
@@ -124,7 +124,7 @@
 	</div> <!-- span4 -->
 	<div class="span4">
 	  <h2>Speed</h2>
-	  <div <% if @latest.speed > @threshold.thresholdSpeed %>style="background-color: red;"<% end %>>
+	  <div <% if @latest.speed > @thresholdS %>style="background-color: red;"<% end %>>
 	    <p>Latest Measurement (<%= (Time.zone.now - @latest.created_at).round %> secs ago):</p>
 	    <p style="margin-left: 20px;"><%= @latest.speed %> mph</p>
 	  </div>
@@ -236,7 +236,7 @@
 	</div> <!-- span4 -->
 	<div class="span4">
 	  <h2>Temperature</h2>
-	  <div <% if @latest.temperature > @threshold.thresholdTemperature %>style="background-color: red;"<% end %>>
+	  <div <% if @latest.temperature > @thresholdT %>style="background-color: red;"<% end %>>
 	    <p>Latest Measurement (<%= (Time.zone.now - @latest.created_at).round %> secs ago):</p>
 	    <p style="margin-left: 20px;"><%= @latest.temperature %> &deg;C</p>
 	  </div>
