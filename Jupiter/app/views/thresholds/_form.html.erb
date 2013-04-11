@@ -1,0 +1,29 @@
+<%= form_for(@threshold) do |f| %>
+  <% if @threshold.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@threshold.errors.count, "error") %> prohibited this threshold from being saved:</h2>
+
+      <ul>
+      <% @threshold.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :thresholdWeight %><br />
+    <%= f.number_field :thresholdWeight %>
+  </div>
+  <div class="field">
+    <%= f.label :thresholdSpeed %><br />
+    <%= f.number_field :thresholdSpeed %>
+  </div>
+  <div class="field">
+    <%= f.label :thresholdTemperature %><br />
+    <%= f.number_field :thresholdTemperature %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

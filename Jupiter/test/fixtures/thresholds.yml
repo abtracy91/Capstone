@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  thresholdWeight: 1
+  thresholdSpeed: 1
+  thresholdTemperature: 1
+
+two:
+  thresholdWeight: 1
+  thresholdSpeed: 1
+  thresholdTemperature: 1

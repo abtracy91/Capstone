@@ -1,11 +1,14 @@
 Jupiter::Application.routes.draw do
 
+  resources :thresholds
+
+
   get "display/index"
   match "/display", :controller => 'display', :action => 'index'
   root :to => 'display#index'
 
   resources :measurements
-
+  resources :thresholds
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

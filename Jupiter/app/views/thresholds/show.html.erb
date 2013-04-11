@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Thresholdweight:</b>
+  <%= @threshold.thresholdWeight %>
+</p>
+
+<p>
+  <b>Thresholdspeed:</b>
+  <%= @threshold.thresholdSpeed %>
+</p>
+
+<p>
+  <b>Thresholdtemperature:</b>
+  <%= @threshold.thresholdTemperature %>
+</p>
+
+
+<%= link_to 'Edit', edit_threshold_path(@threshold) %> |
+<%= link_to 'Back', thresholds_path %>

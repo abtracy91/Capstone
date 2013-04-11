@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130405214032) do
+ActiveRecord::Schema.define(:version => 20130411212737) do
 
   create_table "measurements", :force => true do |t|
     t.integer  "weight"
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(:version => 20130405214032) do
     t.integer  "speed"
     t.integer  "thresholdSpeed"
     t.integer  "temperature"
+    t.integer  "thresholdTemperature"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+  create_table "thresholds", :force => true do |t|
+    t.integer  "thresholdWeight"
+    t.integer  "thresholdSpeed"
     t.integer  "thresholdTemperature"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
