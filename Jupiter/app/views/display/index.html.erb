@@ -29,7 +29,7 @@
 	      <div class="tab-pane fade in active" id="weight15">
 		<div id="last15_chart"></div>
 		<script>
-		  $(function () {
+		  function makelast15() {
 		    new Highcharts.Chart({
 		      chart: { renderTo: 'last15_chart', width: 370},
 		      title: { text: 'Weights from last 15 minutes:' },
@@ -45,7 +45,12 @@
 		        ]
 		      }]
 		    });
-		  });
+		  }
+		  $(function () { makelast15(); });
+		  setInterval( function () {
+		    $('div#weight15').load('http://capstone.cyclone8.org #weight15')
+		    $(function () { makelast15(); });
+		  }, 5000);
 		</script>
 		<ul>
 		<% @last15.each do |i| %>
